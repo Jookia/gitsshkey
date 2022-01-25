@@ -38,7 +38,8 @@ Enter PIN for ED25519-SK key:
 Verifying a git commit:
 
 ```
-jookia@titan:~/gitsshkey% git config gpg.ssh.allowedSignersFile allowed_signers
+jookia@titan:~/gitsshkey% cp allowed_signers .git/tofu_signers
+jookia@titan:~/gitsshkey% git config gpg.ssh.allowedSignersFile .git/tofu_signers
 jookia@titan:~/gitsshkey% git log --oneline --show-signature
 ffd9e50 (HEAD -> main) Good "git" signature for jookia with ED25519-SK key SHA256:/gEvgms/9HpbgpcH+K7O4GYXmqkP7siJx9zHeEWRZTg
 Add TEST_FILE and signature
